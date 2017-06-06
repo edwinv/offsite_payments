@@ -136,7 +136,7 @@ module OffsitePayments #:nodoc:
         end
 
         def amount
-          Money.new(params['amount'].to_i, currency)
+          Money.from_amount(gross.to_d, currency)
         end
 
         def generate_md5string
